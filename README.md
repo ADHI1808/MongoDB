@@ -23,4 +23,8 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
  
     db.createCollection("users") - create collection inside db
 
-    
+    db.dropDatabase() - drop the db
+
+    db.<collection name>.drop() - drop the collection 
+
+    db.users.deleteMany({}) - act as truncate (here no auto resent value similar no sql. mdb is not sequence based it use Globally unique identifier system)
