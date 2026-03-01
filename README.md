@@ -1,6 +1,6 @@
 # MongoDB
 A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
-" No rows, no columns — just JSON structure." 
+" No rows, no columns — just JSON structure." . MongoDB is schema-less
 
 | Feature | MySQL (SQL) | MongoDB (NoSQL) |
 | :--- | :--- | :--- |
@@ -11,7 +11,13 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
 | **Relationships** | JOINs common | Embedding preferred |
 | **Data Design** | Normalization | Denormalization |
 
-### DDL - CREATE,SHOW,USE (here no use table,we can directly access)
+### DDL - CREATE,SHOW,USE (here no use table,we can directly access) No ALTER Command
+Because MongoDB allows:
+JSON
+{ name: "A" }
+{ name: "B", age: 21 }
+{ name: "C", city: "Chennai" }
+Same collection, different fields. No problem.
 
     Show dbs -list the available dbs
   
@@ -28,3 +34,5 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
     db.<collection name>.drop() - drop the collection 
 
     db.users.deleteMany({}) - act as truncate (here no auto resent value similar no sql. mdb is not sequence based it use Globally unique identifier system)
+
+
