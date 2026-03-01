@@ -10,3 +10,17 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
 | **Schema** | Fixed schema | Flexible schema |
 | **Relationships** | JOINs common | Embedding preferred |
 | **Data Design** | Normalization | Denormalization |
+
+### DDL - CREATE,SHOW,USE (here no use table,we can directly access)
+
+    Show dbs -list the available dbs
+  
+    Use <db name> - create new db if not existing 
+   
+    Db - tells the current db
+ 
+    Show collections - list the collections inside the db
+ 
+    db.createCollection("users") - create collection inside db
+
+    
