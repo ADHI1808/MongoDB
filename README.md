@@ -35,4 +35,22 @@ Same collection, different fields. No problem.
 
     db.users.deleteMany({}) - act as truncate (here no auto resent value similar no sql. mdb is not sequence based it use Globally unique identifier system)
 
+#### altering field 1) add field,remove field,modify
+1    
 
+    db.students.updateMany(
+    {},
+    { $set: { age: 0 } }
+    )
+2
+
+    db.students.updateMany(
+    {},
+    { $unset: { age: "" } }
+    )
+3 
+
+    db.students.updateMany(
+    {},
+    [{ $set: { age: { $toString: "$age" } } }]
+    )
