@@ -77,11 +77,11 @@ InsertMany
     { name: "Charan", age: 20 }
     ])
 
-Delete
+Delete 
 
      db.students.deleteOne({ name: "Adhi" })
 
-DeleteMany
+DeleteMany (gt,gte,lt,lte)
 
     db.students.deleteMany({ age: { $gt: 20 } })
 
