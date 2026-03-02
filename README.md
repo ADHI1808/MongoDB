@@ -54,3 +54,29 @@ Same collection, different fields. No problem.
     {},
     [{ $set: { age: { $toString: "$age" } } }]
     )
+Note: {} → no condition (select every document)
+
+### DML - Insert & InsertMany(_id is automatically generated, also we can custom),update,delete & deleteMany
+
+Insert
+
+    db.students.insertOne({
+    name: "Adhi",
+    age: 21,
+    department: "CSE"
+    })
+    
+InsertMany
+
+    db.students.insertMany([
+    { name: "Bala", age: 22 },
+    { name: "Charan", age: 20 }
+    ])
+
+Delete
+
+     db.students.deleteOne({ name: "Adhi" })
+
+DeleteMany
+
+    db.students.deleteMany({ age: { $gt: 20 } })
