@@ -35,7 +35,7 @@ Same collection, different fields. No problem.
 
     db.users.deleteMany({}) - act as truncate (here no auto resent value similar no sql. mdb is not sequence based it use Globally unique identifier system)
 
-#### altering field 1) add field,remove field,modify
+#### altering field 1) add field,2) remove field,3) modify,4) rename collection
 1    
 
     db.students.updateMany(
@@ -55,6 +55,10 @@ Same collection, different fields. No problem.
     [{ $set: { age: { $toString: "$age" } } }]
     )
 Note: {} → no condition (select every document)
+
+4
+
+    db.<oldCollectionName>.renameCollection("<newCollectionName>")
 
 ### DML - Insert & InsertMany(_id is automatically generated, also we can custom),update,delete & deleteMany
 
@@ -80,3 +84,33 @@ Delete
 DeleteMany
 
     db.students.deleteMany({ age: { $gt: 20 } })
+
+#### Update - 1)updateOne, 2)updateMany, 3) increment, 4)rename field
+
+1 
+
+    db.students.updateOne(
+    { name: "Adhi" },          // condition (WHERE)
+    { $set: { age: 22 } }      // new value (SET)
+    )
+
+2
+
+    db.students.updateMany(
+    { age: { $gt: 20 } },
+    { $set: { status: "Senior" } }
+    )
+
+3
+
+    db.students.updateOne(
+    { name: "Adhi" },
+    { $inc: { age: 1 } }
+    )
+
+4
+
+    db.students.updateMany(
+    {},
+    { $rename: { "<old field>": "<new field>" } }
+    )
