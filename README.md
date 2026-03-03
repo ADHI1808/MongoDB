@@ -11,6 +11,49 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
 | **Relationships** | JOINs common | Embedding preferred |
 | **Data Design** | Normalization | Denormalization |
 
+### DQL - display all, condition(and,or)
+
+    db.collection.find(
+    {condition},
+    {projection}
+    )
+
+    ex
+    db.students.find(
+    { age: { $gt: 18 } },   // condition
+    { name: 1, age: 1, _id: 0 }   // projection
+    )
+
+1 display all data
+ 
+    db.students.find()
+2 display particular column(field) note- value 1=include,0=exclude. below will display name,age,address
+
+    db.students.find({}, { name: 1, age: 1, _id: 0, address: 1 })
+3 =,>,<
+
+     db.students.find({ age: 21 })
+
+     db.students.find({ age: { $gt: 18 } })
+
+     db.students.find({ age: { $lt: 18 } })
+4 and, or
+and
+    
+    db.students.find({
+    age: { $gt: 18 },
+    department: "CSE"
+    })
+or
+
+    db.students.find({
+    $or: [
+    { age: 18 },
+    { age: 21 }
+    ]
+    })
+
+    
 ### DDL - CREATE,SHOW,USE (here no use table,we can directly access) No ALTER Command
 Because MongoDB allows:
 JSON
