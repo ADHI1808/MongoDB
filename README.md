@@ -145,7 +145,7 @@ DeleteMany (gt,gte,lt,lte)
 
     db.students.deleteMany({ age: { $gt: 20 } })
 
-#### Update - 1)updateOne, 2)updateMany, 3) increment, 4)rename field
+#### Update - 1)updateOne, 2)updateMany, 3) increment, 4)rename field update statement {which document},{what to change}
 
 1 
 
