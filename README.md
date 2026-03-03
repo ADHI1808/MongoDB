@@ -39,6 +39,21 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
      db.students.find({ age: { $gt: 18 } })
 
      db.students.find({ age: { $lt: 18 } })
+
+Note: to access nested data we use string for condition ex:
+{
+  _id: 1,
+  name: "Adhi",
+  age: 21,
+  address: {
+    city: "Trichy",
+    state: "Tamil Nadu",
+    pincode: 620001
+  }
+}
+
+    db.student.find({"address.city":"Trichy"})
+
 4 and, or
 and
     
