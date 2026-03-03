@@ -13,6 +13,8 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
 
 ### DQL - display all, condition(and,or)
 
+    db.collection.findOne() ->1st data if no condition applied 
+
     db.collection.find(
     {condition},
     {projection}
