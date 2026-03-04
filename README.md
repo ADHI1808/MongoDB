@@ -211,7 +211,7 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
 
 # Operations 
 
-1. comparison(gt,lt,gtq,ltq,eq,ne,in,between)
+#### 1.comparison(gt,lt,gtq,ltq,eq,ne,in,between)
 
 
     db.students.find({
@@ -228,5 +228,12 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     between 12-18
     db.students.find({
     age: {$gt:12,$lt:20},
+    department: "CSE"
+    })
+
+#### 2.Logical(and,or)
+
+    db.students.find({
+    age: { $gt: 18 },
     department: "CSE"
     })
