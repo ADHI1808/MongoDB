@@ -232,8 +232,22 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     })
 
 #### 2.Logical(and,or)
-
+    
+    and: method 1
     db.students.find({
-    age: { $gt: 18 },
+    $and: [
+    { age: { $eq: 18 } },
+    { lastname: "kumar" },
+    { department: "CSE" }]})
+
+    and: method 2
+    db.students.find({
+    age: {$eq:12},lastname:"kumar"},
     department: "CSE"
+    })
+    
+    or
+    db.students.find({
+    $or:[
+    age: {$eq:18},lastname:"kumar"]
     })
