@@ -213,6 +213,7 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
 
 1. comparison (gt,lt,gtq,ltq,eq,ne,in,between)
 
+
     db.students.find({
     age: { $gt: 18 },
     department: "CSE"
