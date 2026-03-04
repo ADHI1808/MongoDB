@@ -264,3 +264,5 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     { department: "CSE" }
     ]
     })
+
+#### 3.query operation(regix)
