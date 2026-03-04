@@ -174,7 +174,7 @@ Delete
 
      db.students.deleteOne({ name: "Adhi" })
 
-DeleteMany (gt,gte,lt,lte,eq)
+DeleteMany (gt,gte,lt,lte,eq,ne)
 
     db.students.deleteMany({ age: { $gt: 20 } })
 
