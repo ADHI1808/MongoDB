@@ -89,6 +89,18 @@ Same collection, different fields. No problem.
  
     db.createCollection("users") - create collection inside db
 
+To create with condition 
+  
+    db.createCollection("students", {
+    validator: {
+    $jsonSchema: {
+    bsonType: "object",
+    required: ["name", "age"],
+    properties: {
+    name: { bsonType: "string" },
+    age: { bsonType: "int" }}}}})
+      
+    
     db.dropDatabase() - drop the db
 
     db.<collection name>.drop() - drop the collection 
