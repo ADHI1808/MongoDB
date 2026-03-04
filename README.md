@@ -89,6 +89,13 @@ Same collection, different fields. No problem.
  
     db.createCollection("users") - create collection inside db
 
+    db.dropDatabase() - drop the db
+
+    db.<collection name>.drop() - drop the collection 
+
+    db.users.deleteMany({}) - act as truncate (here no auto resent value similar no sql. mdb is not sequence based it use Globally unique identifier system)
+
+
 To create with condition 
   
     db.createCollection("students", {
@@ -101,12 +108,7 @@ To create with condition
     age: { bsonType: "int" }}}}})
       
     
-    db.dropDatabase() - drop the db
-
-    db.<collection name>.drop() - drop the collection 
-
-    db.users.deleteMany({}) - act as truncate (here no auto resent value similar no sql. mdb is not sequence based it use Globally unique identifier system)
-
+    
 #### altering field 1) add field,2) remove field,3) modify,4) rename collection
 1    
 
