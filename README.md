@@ -211,7 +211,7 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
 
 # Operations 
 
-1. comparison (gt,lt,gtq,ltq,eq,ne,in,between)
+1. comparison(gt,lt,gtq,ltq,eq,ne,in,between)
 
 
     db.students.find({
