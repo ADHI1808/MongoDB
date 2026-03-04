@@ -16,12 +16,21 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
 note:consider collection with 1000 data ,using find() wont display all !,insted it will split parts of data know as cursor.(i.e parts of whole data). we can use "find().toArray()" to get all
 
 #### functions:
+{
 1
 
-    limit() -> used to limit the find()
+    .limit(n) -> used to limit the find()
 2
 
-    skip() -> skips the 1st n nimbers from find()
+    .skip(n) -> skips the 1st n nimbers from find()
+3
+
+    .sort({c name:1}) -> accending if 1
+    .sort({c name:-1}) -> descending if -1
+4
+
+    
+}
 
     db.collection.findOne() ->1st data if no condition applied 
 
