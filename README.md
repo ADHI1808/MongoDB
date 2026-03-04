@@ -207,3 +207,25 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     {},
     { $rename: { "<old field>": "<new field>" } }
     )
+
+
+# Operations 
+
+1. comparison (gt,lt,gtq,ltq,eq,ne,in,between)
+
+    db.students.find({
+    age: { $gt: 18 },
+    department: "CSE"
+    })
+    
+    only 18,24,25
+    db.students.find({
+    age: {$in:[18,24,25]}},
+    department: "CSE"
+    })
+    
+    between 12-18
+    db.students.find({
+    age: {$gt:12,$lt:20},
+    department: "CSE"
+    })
