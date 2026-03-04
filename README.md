@@ -13,6 +13,8 @@ A document-based NoSQL database. It stores data in BSON (Binary JSON) format.
 
 ### DQL - display all, condition(and,or)
 
+note:consider collection with 1000 data ,using find() wont display all !,insted it will split parts of data know as cursor.(i.e parts of whole data). we can use "find().toArray()" to get all
+
     db.collection.findOne() ->1st data if no condition applied 
 
     db.collection.find(
