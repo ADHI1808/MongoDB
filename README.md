@@ -231,7 +231,7 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     department: "CSE"
     })
 
-#### 2.Logical(and,or)
+#### 2.Logical(and,or,not,nor)
     
     and: method 1
     db.students.find({
@@ -250,4 +250,17 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     db.students.find({
     $or:[
     age: {$eq:18},lastname:"kumar"]
+    })
+
+    not- used for only 1 field
+    db.students.find({
+    age: { $not: { $eq: 18 } }
+    })
+
+    nor- can be used with multiple field 
+    db.students.find({
+    $nor: [
+    { age: 18 },
+    { department: "CSE" }
+    ]
     })
