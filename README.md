@@ -265,4 +265,30 @@ DeleteMany (gt,gte,lt,lte,eq,ne)
     ]
     })
 
-#### 3.query operation(regix)
+#### 3.query operation(regex)
+
+starts -> ^__
+ends -> __$
+contains -> "__"
+ignore case -> $options: "i"
+
+starts with ba (^ba)
+   
+    db.students.find({
+    name: { $regex: "^ba" }
+    })
+ends with ra (ra$)
+
+    db.students.find({
+    name: { $regex: "ra$" }
+    })
+contains bala ("bala")
+
+    db.students.find({
+    name: { $regex: "bala" }
+    })
+contains dhi without case sensitive ($options:"i")
+
+    db.students.find({
+    name: { $regex: "dhi",$options:"i" }
+    })
